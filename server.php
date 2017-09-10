@@ -7,7 +7,7 @@ while (true) {
     clearstatcache();
 
     // if you using database, don't forget fill the fields
-    $pdo = new PDO("mysql:host=localhost;dbname=test;", "root", "");
+    $pdo = new PDO("mysql:host=localhost;dbname=;", "", "");
     $query = $pdo->prepare("SELECT * FROM users");
     $query->execute();
 
@@ -20,6 +20,8 @@ while (true) {
      * echo $result['data'];
      *
      */
+    
+    // fields from database
     while ($fetch = $query->fetch()) {
         $result['id'] = $fetch['id'];
         $result['name'] = $fetch['name'];
